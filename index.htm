@@ -21,8 +21,18 @@
 
   .works { padding:50px 20px; max-width:1200px; margin:auto; }
   .works h2 { text-align:center; font-size:2em; margin-bottom:30px; }
-  .works-gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px; }
-  .works-gallery img { width:100%; border-radius:15px; transition: transform 0.3s; }
+  .works-gallery { 
+    display:grid; 
+    grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); 
+    gap:20px; 
+    grid-auto-flow: row; /* 🔒 Mantiene el orden visual */
+  }
+  .works-gallery img { 
+    width:100%; 
+    border-radius:15px; 
+    transition: transform 0.3s; 
+    order: initial; /* 🔒 Evita reordenamiento accidental */
+  }
   .works-gallery img:hover { transform: scale(1.05); }
 
   .team { padding:50px 20px; background:#001a33; }
@@ -119,6 +129,7 @@
 
 </body>
 </html>
+
 
 
 
